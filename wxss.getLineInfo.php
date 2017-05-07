@@ -14,7 +14,7 @@ require_once '../inc.Config.php';
 //设置HTTP头
 header("Content-Type: application/json; charset=utf-8\n");
 
-if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
+if (!isset($_GET['id']) || !Verifier::isNumber($_GET['id'])) {
 	throw new Error('传入线路ID有误');
 }
 
