@@ -1,10 +1,10 @@
 <?php
 /**
- *  HMT Bus GO! (WXSS VER.)
+ *	HMT Bus GO! (WXSS VER.)
  *
- *  @author CRH380A-2722 <609657831@qq.com>
- *  @copyright 2016-2017 CRH380A-2722
- *  @license MIT
+ *	@author CRH380A-2722 <609657831@qq.com>
+ *	@copyright 2016-2017 CRH380A-2722
+ *	@license MIT
  *	@note 获取站点详情
  */
 
