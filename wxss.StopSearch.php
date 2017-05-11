@@ -5,7 +5,7 @@
  *  @author CRH380A-2722 <609657831@qq.com>
  *  @copyright 2016-2017 CRH380A-2722
  *  @license MIT
- *	@note 获取站点查询结果
+ *  @note 获取站点查询结果
  */
 
 //包含配置文件
