@@ -5,7 +5,7 @@
  *  @author CRH380A-2722 <609657831@qq.com>
  *  @copyright 2016-2017 CRH380A-2722
  *  @license MIT
- *	@note 获取实时校巴状态
+ *  @note 获取实时校巴状态
  */
 
 //包含配置文件
