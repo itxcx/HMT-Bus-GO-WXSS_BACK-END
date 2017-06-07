@@ -21,8 +21,8 @@ foreach ($bus['online'] as $online) {
 	$data[] = array(
 		'id' => $i,
 		'title' => $online['busNum'] . ' @ ' . $online['line'] . ' [终端在线]',
-		'longitude' => $online['position'][0] - 0.000150,
-		'latitude' => $online['position'][1] + 0.000070,
+		'longitude' => $online['position'][0] + 0.000050,
+		'latitude' => $online['position'][1] - 0.000250,
 		'iconPath' => '/source/map-marker/marker-bus-online.png',
 		'width' => 40,
 		'height' => 40
@@ -34,8 +34,8 @@ foreach ($bus['offline'] as $offline) {
 	$data[] = array(
 		'id' => $i,
 		'title' => $offline['busNum'] . ' [终端离线]',
-		'longitude' => $offline['position'][0] - 0.000150,
-		'latitude' => $offline['position'][1] + 0.000070,
+		'longitude' => $offline['position'][0] + 0.000050,
+		'latitude' => $offline['position'][1] - 0.000250,
 		'iconPath' => '/source/map-marker/marker-bus-offline.png',
 		'width' => 40,
 		'height' => 40
@@ -47,8 +47,8 @@ foreach ($stops as $stop) {
 	$data[] = array(
 		'id' => $stop['stopId'] + 50,
 		'title' => $stop['title'],
-		'longitude' => $stop['position'][0] - 0.000150,
-		'latitude' => $stop['position'][1] + 0.000070,
+		'longitude' => $stop['position'][0] + 0.000050,
+		'latitude' => $stop['position'][1] - 0.000250,
 		'iconPath' => '/source/map-marker/marker-stop.png',
 		'width' => 40,
 		'height' => 40
