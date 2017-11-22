@@ -19,17 +19,44 @@ $i = 1;
 
 foreach ($bus['online'] as $online) {
 	$iconPath = NULL;
-	switch (@$online['headPosition']) {
-		case 1: $iconPath = '/source/map-marker/marker-bus-online-N.png'; break;
-		case 2: $iconPath = '/source/map-marker/marker-bus-online-NE.png'; break;
-		case 3: $iconPath = '/source/map-marker/marker-bus-online-E.png'; break;
-		case 4: $iconPath = '/source/map-marker/marker-bus-online-SE.png'; break;
-		case 5: $iconPath = '/source/map-marker/marker-bus-online-S.png'; break;
-		case 6: $iconPath = '/source/map-marker/marker-bus-online-SW.png'; break;
-		case 7: $iconPath = '/source/map-marker/marker-bus-online-W.png'; break;
-		case 8: $iconPath = '/source/map-marker/marker-bus-online-NW.png'; break;
-		default: $iconPath = '/source/map-marker/marker-bus-online.png'; break;
+	
+	/**
+	 *	判断校巴是否支持微信支付
+	 *
+	 *	@note 这里为临时修补，预计寒假把API重写一次后重铸此段代码
+	 *	@note 目前支持微信支付的校巴仅有31048，可使用硬编码（临时措施）
+	 */
+
+	 if (@$online['busNum'] == '粤C31048') {
+
+		 switch (@$online['headPosition']) {
+		 	case 1: $iconPath = '/source/map-marker/marker-bus-wxpay-N.png'; break;
+		 	case 2: $iconPath = '/source/map-marker/marker-bus-wxpay-NE.png'; break;
+		 	case 3: $iconPath = '/source/map-marker/marker-bus-wxpay-E.png'; break;
+		 	case 4: $iconPath = '/source/map-marker/marker-bus-wxpay-SE.png'; break;
+		 	case 5: $iconPath = '/source/map-marker/marker-bus-wxpay-S.png'; break;
+		 	case 6: $iconPath = '/source/map-marker/marker-bus-wxpay-SW.png'; break;
+		 	case 7: $iconPath = '/source/map-marker/marker-bus-wxpay-W.png'; break;
+		 	case 8: $iconPath = '/source/map-marker/marker-bus-wxpay-NW.png'; break;
+		 	default: $iconPath = '/source/map-marker/marker-bus-wxpay.png'; break;
+		 }
+
+	 } else {
+
+		switch (@$online['headPosition']) {
+			case 1: $iconPath = '/source/map-marker/marker-bus-online-N.png'; break;
+			case 2: $iconPath = '/source/map-marker/marker-bus-online-NE.png'; break;
+			case 3: $iconPath = '/source/map-marker/marker-bus-online-E.png'; break;
+			case 4: $iconPath = '/source/map-marker/marker-bus-online-SE.png'; break;
+			case 5: $iconPath = '/source/map-marker/marker-bus-online-S.png'; break;
+			case 6: $iconPath = '/source/map-marker/marker-bus-online-SW.png'; break;
+			case 7: $iconPath = '/source/map-marker/marker-bus-online-W.png'; break;
+			case 8: $iconPath = '/source/map-marker/marker-bus-online-NW.png'; break;
+			default: $iconPath = '/source/map-marker/marker-bus-online.png'; break;
+		}
+
 	}
+
 	$data[] = array(
 		'id' => $i,
 		'title' => $online['busNum'] . ' @ ' . $online['line'] . ' [终端在线]',
